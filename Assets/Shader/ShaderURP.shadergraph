@@ -10,15 +10,6 @@
             "m_Id": "d7c687462b694bdf8765e17066730ab2"
         },
         {
-            "m_Id": "3608dbf105a145efb9a8d915d2783f3b"
-        },
-        {
-            "m_Id": "2581bc977a1e449cb20adffc8f0d42b6"
-        },
-        {
-            "m_Id": "3ef8e36cd5f449e8b11c4c88683fb314"
-        },
-        {
             "m_Id": "5248665f40fc4d4995d0d2a026b6df55"
         }
     ],
@@ -773,35 +764,6 @@
 }
 
 {
-    "m_SGVersion": 3,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
-    "m_ObjectId": "2581bc977a1e449cb20adffc8f0d42b6",
-    "m_Guid": {
-        "m_GuidSerialized": "2dd6d988-9dde-45fb-8ce6-32ef072231eb"
-    },
-    "m_Name": "ToonRampTinting",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "ToonRampTinting",
-    "m_DefaultReferenceName": "_ToonRampTinting",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
-    },
-    "isMainColor": false,
-    "m_ColorMode": 0
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "25e8f626a48c4fff9c82cb4bcab4aec0",
@@ -879,33 +841,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "3608dbf105a145efb9a8d915d2783f3b",
-    "m_Guid": {
-        "m_GuidSerialized": "0ba091d1-bc50-497d-aa83-03d6a175ef70"
-    },
-    "m_Name": "ToonRampSmoothness",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "ToonRampSmoothness",
-    "m_DefaultReferenceName": "_ToonRampSmoothness",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "36c8db10435a4c49b79ce7266e502857",
@@ -980,33 +915,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "3ef8e36cd5f449e8b11c4c88683fb314",
-    "m_Guid": {
-        "m_GuidSerialized": "e987dec4-93fe-4230-a128-4d2b15c646e3"
-    },
-    "m_Name": "ToonRampOffset",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "ToonRampOffset",
-    "m_DefaultReferenceName": "_ToonRampOffset",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
 }
 
 {
@@ -2739,15 +2647,6 @@
         },
         {
             "m_Id": "d7c687462b694bdf8765e17066730ab2"
-        },
-        {
-            "m_Id": "3608dbf105a145efb9a8d915d2783f3b"
-        },
-        {
-            "m_Id": "2581bc977a1e449cb20adffc8f0d42b6"
-        },
-        {
-            "m_Id": "3ef8e36cd5f449e8b11c4c88683fb314"
         },
         {
             "m_Id": "5248665f40fc4d4995d0d2a026b6df55"
