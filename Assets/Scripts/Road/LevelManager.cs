@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        parentRoad.position = new Vector3(parentRoad.position.x + 5 * Time.deltaTime, 0, 0);
+        parentRoad.position += new Vector3( - 5 * Time.deltaTime, 0, 0);
 
     }
     IEnumerator repeat()
@@ -35,9 +35,12 @@ public class LevelManager : MonoBehaviour
         {
             AddLevelBlock();
             yield return new WaitForSeconds(5f);
+            Points p = currentLevelBlocks[0];
+            currentLevelBlocks.RemoveAt(0);
+            Destroy(p.gameObject);
         }
     }
-    public void AddLevelBlock()
+    void AddLevelBlock()
     {
         int RandomIdx = Random.Range(0, allTheLevelBlock.Count);
         Points block;
@@ -55,12 +58,14 @@ public class LevelManager : MonoBehaviour
         block.transform.SetParent(parentRoad, false);
 
         float blockLength = Vector3.Distance(block.startPoint.localPosition, block.endPoint.localPosition);
-        //Vector3 correction = new Vector3(spawnPosition.x - block.startPoint.position.x, 0, 0);
 
         block.transform.position = spawnPosition + new Vector3(blockLength / 2, 0, 0); ;
 
         currentLevelBlocks.Add(block);
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(20, 0.5f, 20));
+    }
 
 }
