@@ -21,8 +21,6 @@ public class CarController : MonoBehaviour
     // It should be clamped between the both sides of the car
     Vector3 _targetPosition = Vector3.zero;
 
-    private Vector3 _originalBodyPosition;
-
     private BoxCollider _carCollider;
 
     // Start is called before the first frame update
@@ -31,7 +29,6 @@ public class CarController : MonoBehaviour
         Debug.Assert(_carBody != null, "Car Body property in CarController is null. Did you forget to set up the the rigth game object?");
         _carCollider = _carBody.GetComponent<BoxCollider>();
         Debug.Assert(_carCollider != null, "Car Body should provide a collider");
-        _originalBodyPosition = _carBody.transform.localPosition;
     }
 
     // Update is called once per frame

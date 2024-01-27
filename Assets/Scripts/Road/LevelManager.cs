@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] List<Points> allTheLevelBlock = new List<Points>();
     [SerializeField] List<Points> currentLevelBlocks = new List<Points>();
     [SerializeField] Transform parentRoad;
+    [SerializeField] float TimeToSpawn = 2;
 
     protected virtual void Start()
     {
@@ -26,7 +27,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        parentRoad.position += new Vector3( - 5 * Time.deltaTime, 0, 0);
+        parentRoad.position += new Vector3( - Speed * Time.deltaTime, 0, 0);
 
     }
     IEnumerator repeat()
@@ -34,7 +35,7 @@ public class LevelManager : MonoBehaviour
         while (true)
         {
             AddLevelBlock();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(TimeToSpawn);
             Points p = currentLevelBlocks[0];
             currentLevelBlocks.RemoveAt(0);
             Destroy(p.gameObject);
