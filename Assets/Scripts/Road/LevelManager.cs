@@ -36,13 +36,21 @@ public class LevelManager : MonoBehaviour
         while (true)
         {
             AddLevelBlock();
-            yield return new WaitForSeconds(TimeToSpawn);
+            //yield return new WaitForSeconds(TimeToSpawn);
+            float respawnTime = RespawnTime();
+
+            if (Mathf.Approximately(0, respawnTime))
+                yield return new WaitForSeconds(respawnTime);
+
+            yield return new WaitForSeconds(RespawnTime());
+
 
             Points p = currentLevelBlocks[0];
             currentLevelBlocks.RemoveAt(0);
             Destroy(p.gameObject);
         }
     }
+
     void AddLevelBlock()
     {
         int RandomIdx = Random.Range(0, allTheLevelBlock.Count);
@@ -70,6 +78,32 @@ public class LevelManager : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(20, 0.5f, 20));
+    }
+
+    float ChunksPerSecond()
+    {
+        float sizeOfChunk = SizeOfChunk();
+        if (Mathf.Approximately(0, sizeOfChunk))
+            return 0;
+
+        return Speed / sizeOfChunk;
+    }
+
+    float SizeOfChunk()
+    {
+        if (currentLevelBlocks.Count == 0)
+        {
+            return 0;
+        }
+
+        Points firstChunk = currentLevelBlocks[0];
+
+        return Vector3.Distance(firstChunk.startPoint.position, firstChunk.endPoint.position);
+    }
+
+    float RespawnTime()
+    {
+        return 1 / ChunksPerSecond();
     }
 
 }
