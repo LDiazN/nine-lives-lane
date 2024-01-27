@@ -18,8 +18,4 @@ public class Lifemanager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void LifeBehaviour(int damage)
-    {
-        CurrentLifes -= damage;
-    }
 }
