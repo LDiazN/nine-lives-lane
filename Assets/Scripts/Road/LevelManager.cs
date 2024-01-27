@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] List<Points> allTheLevelBlock = new List<Points>();
     [SerializeField] List<Points> currentLevelBlocks = new List<Points>();
-    [SerializeField] Transform levelStartPosition;
     [SerializeField] Transform parentRoad;
 
     protected virtual void Start()
@@ -46,7 +45,7 @@ public class LevelManager : MonoBehaviour
         if (currentLevelBlocks.Count == 0)
         {
             block = Instantiate(allTheLevelBlock[0]);
-            spawnPosition = levelStartPosition.position;
+            spawnPosition = parentRoad.position;
         }
         else
         {
@@ -55,9 +54,10 @@ public class LevelManager : MonoBehaviour
         }
         block.transform.SetParent(parentRoad, false);
 
-        Vector3 correction = new Vector3(spawnPosition.x - block.startPoint.position.x, 0, 0);
+        float blockLength = Vector3.Distance(block.startPoint.localPosition, block.endPoint.localPosition);
+        //Vector3 correction = new Vector3(spawnPosition.x - block.startPoint.position.x, 0, 0);
 
-        block.transform.position = correction;
+        block.transform.position = spawnPosition + new Vector3(blockLength / 2, 0, 0); ;
 
         currentLevelBlocks.Add(block);
     }
