@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
         {
             AddLevelBlock();
             yield return new WaitForSeconds(TimeToSpawn);
+
             Points p = currentLevelBlocks[0];
             currentLevelBlocks.RemoveAt(0);
             Destroy(p.gameObject);
@@ -65,6 +66,7 @@ public class LevelManager : MonoBehaviour
 
         currentLevelBlocks.Add(block);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(20, 0.5f, 20));
