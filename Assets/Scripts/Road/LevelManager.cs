@@ -66,6 +66,7 @@ public class LevelManager : MonoBehaviour
 
         currentLevelBlocks.Add(block);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(20, 0.5f, 20));

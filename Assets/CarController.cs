@@ -41,7 +41,7 @@ public class CarController : MonoBehaviour
 
     private void MoveCarBody()
     {
-        Vector3 Velocity = _maxCarBodySpeed * (_targetPosition -  _carBody.transform.position);
+        Vector3 Velocity = _maxCarBodySpeed * (_targetPosition -  _carBody.transform.localPosition);
 
         if ( Vector3.Distance(_carBody.transform.localPosition, _targetPosition) >= 0.1)
         {
@@ -86,25 +86,26 @@ public class CarController : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(
             transform.position, 
-            transform.localToWorldMatrix * Vector3.right * _maxDistanceFromCenter
+            transform.TransformPoint(Vector3.right * _maxDistanceFromCenter)
             );
 
         Gizmos.DrawLine(
             transform.position,
-            transform.localToWorldMatrix * Vector3.left * _maxDistanceFromCenter
+            transform.TransformPoint(Vector3.left * _maxDistanceFromCenter)
             );
 
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, 1);
 
-        // Draw left cube
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.localToWorldMatrix * (Vector3.right * _maxDistanceFromCenter + Vector3.right), new Vector3(2,2,2));
-        Gizmos.DrawWireCube(transform.localToWorldMatrix * (Vector3.left * _maxDistanceFromCenter + Vector3.left), new Vector3(2,2,2));
+        // Draw left cube
+        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.right * _maxDistanceFromCenter + Vector3.right), new Vector3(2,2,2));
+        // Draw Right cube
+        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.left * _maxDistanceFromCenter + Vector3.left), new Vector3(2,2,2));
 
         // Draw Target location
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.localToWorldMatrix * _targetPosition, 1);
+        Gizmos.DrawWireSphere(transform.TransformPoint(_targetPosition), 1);
 
         // Draw limits
         if (_carCollider != null)
