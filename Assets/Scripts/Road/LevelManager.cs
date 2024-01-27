@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
         {
             AddLevelBlock();
             yield return new WaitForSeconds(TimeToSpawn);
+
             Points p = currentLevelBlocks[0];
             currentLevelBlocks.RemoveAt(0);
             Destroy(p.gameObject);
