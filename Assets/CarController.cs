@@ -17,6 +17,12 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private float _maxCarBodySpeed = 10;
 
+    [SerializeField]
+    private float _boinkTime = 0.5f; // in seconds
+
+    [SerializeField]
+    private float _maxBoinkHeight = 100;
+
     // Target position is a position in **local space**, it's where the car will try to go at any moment. 
     // It should be clamped between the both sides of the car
     Vector3 _targetPosition = Vector3.zero;
@@ -37,6 +43,12 @@ public class CarController : MonoBehaviour
         UpdateTargetPosition();
 
         MoveCarBody();
+
+        // DEBUG: DELETE LATER
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Boink();
+        }
     }
 
     private void MoveCarBody()
@@ -113,5 +125,28 @@ public class CarController : MonoBehaviour
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireCube(_carBody.transform.position, new Vector3(_carCollider.bounds.size.x, 1, 1));
         }
+    }
+
+    public void Boink()
+    {
+        StartCoroutine(StartBoink());
+    }
+
+    IEnumerator StartBoink()
+    {
+        float timePassed = 0;
+
+
+        while (timePassed < _boinkTime)
+        {
+            timePassed += Time.deltaTime;
+            float t = timePassed / _boinkTime;
+
+            _targetPosition.y -= Mathf.Cos(t * Mathf.Deg2Rad * 180) * _maxBoinkHeight;
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        _targetPosition.y = 0;
     }
 }
