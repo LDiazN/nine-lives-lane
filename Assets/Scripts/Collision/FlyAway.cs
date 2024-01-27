@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class FlyAway : MonoBehaviour
 {
-    [SerializeField] float force = 10.0f;
+    [SerializeField] float forceForward = 10.0f;
+    [SerializeField] float forceUp = 10.0f;
     [SerializeField] float timeToDestoy;
     Rigidbody rb;
-    GameObject player;
 
     private void Start()
     {
-        player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -24,8 +23,8 @@ public class FlyAway : MonoBehaviour
             if (rb != null)
             {
                 //Lifemanager.Instance.LifeBehaviour(m.damageToPlayer);
-                Vector3 directionToImpulse = (  transform.position - player.transform.position).normalized * force;
-                rb.AddForce(directionToImpulse + Vector3.up * force / 2, ForceMode.Impulse);
+                Vector3 directionToImpulse = (transform.position - GameManager.Instance.Player.transform.position).normalized * forceForward;
+                rb.AddForce(directionToImpulse + Vector3.up * forceUp, ForceMode.Impulse);
                 Destroy(gameObject, timeToDestoy);
             }
         }
