@@ -5,6 +5,12 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 10.0f;
+    public int damageToPlayer;
+
+    private void Start()
+    {
+        Destroy(gameObject, 5);
+    }
 
     void Update()
     {
