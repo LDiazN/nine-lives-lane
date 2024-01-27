@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [HideInInspector] public GameObject Player;
+    public float InvulnerabilityTime = 0.5f;
     private void Awake()
     {
         if (Instance == null)
@@ -16,7 +17,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
     private void Start()
     {

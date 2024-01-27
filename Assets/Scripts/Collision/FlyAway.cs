@@ -7,7 +7,7 @@ public class FlyAway : MonoBehaviour
 {
     [SerializeField] float forceForward = 10.0f;
     [SerializeField] float forceUp = 10.0f;
-    [SerializeField] float timeToDestoy;
+    [SerializeField] float timeToDestoy = 5;
     Rigidbody rb;
 
     private void Start()
@@ -19,12 +19,11 @@ public class FlyAway : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            //Move m = other.GetComponent<Move>();
             if (rb != null)
             {
-                //Lifemanager.Instance.LifeBehaviour(m.damageToPlayer);
                 Vector3 directionToImpulse = (transform.position - GameManager.Instance.Player.transform.position).normalized * forceForward;
                 rb.AddForce(directionToImpulse + Vector3.up * forceUp, ForceMode.Impulse);
+                GetComponent<ExplosiveObjects>().canExplote = true;
                 Destroy(gameObject, timeToDestoy);
             }
         }
