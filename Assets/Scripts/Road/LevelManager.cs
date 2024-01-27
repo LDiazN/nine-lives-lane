@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] List<Points> currentLevelBlocks = new List<Points>();
     [SerializeField] Transform parentRoad;
     [SerializeField] float TimeToSpawn = 2;
+    [SerializeField] int InitialRoads = 5;
 
     protected virtual void Start()
     {
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
         {
             parentRoad.position = Vector3.zero;
         }
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < InitialRoads; i++)
         {
             AddLevelBlock();
         }
@@ -27,7 +28,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        parentRoad.position += new Vector3( - Speed * Time.deltaTime, 0, 0);
+        parentRoad.position += new Vector3( 0, 0, -Speed * Time.deltaTime);
 
     }
     IEnumerator repeat()
@@ -60,7 +61,7 @@ public class LevelManager : MonoBehaviour
 
         float blockLength = Vector3.Distance(block.startPoint.localPosition, block.endPoint.localPosition);
 
-        block.transform.position = spawnPosition + new Vector3(blockLength / 2, 0, 0); ;
+        block.transform.position = spawnPosition + new Vector3(0, 0, blockLength / 2);
 
         currentLevelBlocks.Add(block);
     }

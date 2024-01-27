@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259653479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.217616, y: -1.9077134, z: -2.7385075}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -517,8 +517,9 @@ MonoBehaviour:
   allTheLevelBlock:
   - {fileID: 3675981910744823857, guid: eff7069d7fe45074592a1fe8d48f071f, type: 3}
   currentLevelBlocks: []
-  levelStartPosition: {fileID: 1259653480}
   parentRoad: {fileID: 2004222838}
+  TimeToSpawn: 2
+  InitialRoads: 20
 --- !u!4 &1637225577
 Transform:
   m_ObjectHideFlags: 0

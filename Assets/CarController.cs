@@ -45,7 +45,7 @@ public class CarController : MonoBehaviour
 
         if ( Vector3.Distance(_carBody.transform.localPosition, _targetPosition) >= 0.1)
         {
-            _carBody.transform.position += Velocity * Time.deltaTime;
+            _carBody.transform.localPosition += Velocity * Time.deltaTime;
         }
     }
 
@@ -86,12 +86,12 @@ public class CarController : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(
             transform.position, 
-            transform.position + Vector3.right * _maxDistanceFromCenter
+            transform.localToWorldMatrix * Vector3.right * _maxDistanceFromCenter
             );
 
         Gizmos.DrawLine(
             transform.position,
-            transform.position + Vector3.left * _maxDistanceFromCenter
+            transform.localToWorldMatrix * Vector3.left * _maxDistanceFromCenter
             );
 
         Gizmos.color = Color.red;
@@ -99,18 +99,18 @@ public class CarController : MonoBehaviour
 
         // Draw left cube
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + Vector3.right * _maxDistanceFromCenter + Vector3.right * 1, new Vector3(2,2,2));
-        Gizmos.DrawWireCube(transform.position + Vector3.left * _maxDistanceFromCenter + Vector3.left * 1, new Vector3(2,2,2));
+        Gizmos.DrawWireCube(transform.localToWorldMatrix * (Vector3.right * _maxDistanceFromCenter + Vector3.right), new Vector3(2,2,2));
+        Gizmos.DrawWireCube(transform.localToWorldMatrix * (Vector3.left * _maxDistanceFromCenter + Vector3.left), new Vector3(2,2,2));
 
         // Draw Target location
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position + _targetPosition, 1);
+        Gizmos.DrawWireSphere(transform.localToWorldMatrix * _targetPosition, 1);
 
         // Draw limits
         if (_carCollider != null)
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawWireCube(transform.position, new Vector3(_carCollider.bounds.size.x, 1, 1));
+            Gizmos.DrawWireCube(_carBody.transform.position, new Vector3(_carCollider.bounds.size.x, 1, 1));
         }
     }
 }
