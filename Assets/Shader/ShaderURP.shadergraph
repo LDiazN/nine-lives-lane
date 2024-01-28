@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "5248665f40fc4d4995d0d2a026b6df55"
+        },
+        {
+            "m_Id": "f605d012c2c74140bfdfda524b4be66d"
         }
     ],
     "m_Keywords": [],
@@ -2269,8 +2272,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1693.0,
-            "y": 15.99999713897705,
+            "x": -1544.0,
+            "y": 67.99999237060547,
             "width": 122.0,
             "height": 245.0
         }
@@ -2650,6 +2653,9 @@
         },
         {
             "m_Id": "5248665f40fc4d4995d0d2a026b6df55"
+        },
+        {
+            "m_Id": "f605d012c2c74140bfdfda524b4be66d"
         }
     ]
 }
@@ -2817,6 +2823,28 @@
         "m_SerializableColors": []
     },
     "m_Value": 0.0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
+    "m_ObjectId": "f605d012c2c74140bfdfda524b4be66d",
+    "m_Guid": {
+        "m_GuidSerialized": "9b6dd853-24bd-4c9e-86db-d1d393641297"
+    },
+    "m_Name": "CheckStatus",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "CheckStatus",
+    "m_DefaultReferenceName": "_CheckStatus",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": false
 }
 
 {
