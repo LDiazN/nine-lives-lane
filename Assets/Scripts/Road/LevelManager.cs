@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
                 RandomIdx = 0;
                 break;
             case GameState.InGame:
-                RandomIdx = Random.Range(0, allTheLevelBlock.Count);
+                RandomIdx = Random.Range(1, allTheLevelBlock.Count);
                 break;
             default:
                 break;
