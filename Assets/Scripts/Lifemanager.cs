@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Lifemanager : MonoBehaviour
 {
     public int CurrentLifes = 7;
     public static Lifemanager Instance;
     private bool _canBeHurt = true;
+
+    private AudioSource audioSource;
     [SerializeField] float TimeBetweenHits = 2; // secondss
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -32,6 +39,7 @@ public class Lifemanager : MonoBehaviour
         var carController = GameManager.Instance.Player.GetComponent<CarController>();
         carController.Boink();
         StartCoroutine(HurtTimer());
+        audioSource.Play();
     }
 
     IEnumerator HurtTimer()
