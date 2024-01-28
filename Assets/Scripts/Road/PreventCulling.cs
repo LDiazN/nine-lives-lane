@@ -15,7 +15,6 @@ public class PreventCulling : MonoBehaviour
     {
         if ((Camera.main == null) || (Renderer == null))
         {
-            Debug.Log("Oh no");
             return;
         }
 
