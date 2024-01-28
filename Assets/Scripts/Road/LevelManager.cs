@@ -72,6 +72,7 @@ public class LevelManager : MonoBehaviour
         float blockLength = Vector3.Distance(block.startPoint.localPosition, block.endPoint.localPosition);
 
         block.transform.position = spawnPosition + new Vector3(0, 0, blockLength / 2);
+        block.transform.position = new Vector3(block.transform.position.x, 0, block.transform.position.z);
 
         currentLevelBlocks.Add(block);
     }

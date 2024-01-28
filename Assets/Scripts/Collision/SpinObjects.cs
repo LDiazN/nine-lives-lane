@@ -20,7 +20,7 @@ public class SpinObjects : MonoBehaviour
         {
             transform.position += directionToImpulse * Time.deltaTime;
             transform.localRotation = Quaternion.Euler(0, transform.eulerAngles.y + spinForce * Time.deltaTime, 0);
-            rb.velocity = directionToImpulse * speed * Time.deltaTime;
+            rb.velocity = directionToImpulse * speed ;
         }
     }
     private void OnTriggerEnter(Collider other)
