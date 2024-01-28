@@ -23,6 +23,15 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private float _maxBoinkHeight = 100;
 
+    private float _turnAnimationStatus = 0;
+
+    [SerializeField]
+    private float _turnAnimationSpeed = 2;
+
+    [SerializeField]
+    private float _turnAnimationMaxDegrees = 30;
+
+    private Quaternion _originalRotation;
     // Target position is a position in **local space**, it's where the car will try to go at any moment. 
     // It should be clamped between the both sides of the car
     Vector3 _targetPosition = Vector3.zero;
@@ -32,6 +41,8 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _originalRotation = _carBody.transform.rotation;
+
         Debug.Assert(_carBody != null, "Car Body property in CarController is null. Did you forget to set up the the rigth game object?");
         _carCollider = _carBody.GetComponent<BoxCollider>();
         Debug.Assert(_carCollider != null, "Car Body should provide a collider");
@@ -44,11 +55,49 @@ public class CarController : MonoBehaviour
 
         MoveCarBody();
 
+        UpdateTurnAnimation();
+
         // DEBUG: DELETE LATER
         if (Input.GetKeyDown(KeyCode.C))
         {
             Boink();
         }
+    }
+
+    private void UpdateTurnAnimation()
+    {
+        if (ShouldMoveRight())
+        {
+            _turnAnimationStatus += Time.deltaTime * _turnAnimationSpeed;
+        }
+        
+        if (ShouldMoveLeft())
+        {
+            _turnAnimationStatus -= Time.deltaTime * _turnAnimationSpeed;
+        }
+
+        if (!ShouldMoveLeft() && !ShouldMoveRight())
+        {
+            _turnAnimationStatus -= Mathf.Sign(_turnAnimationStatus) * 
+                Mathf.Min(
+                    Time.deltaTime, 
+                    Mathf.Abs(_turnAnimationStatus)
+            );
+
+            if (Mathf.Approximately(0, _turnAnimationStatus))
+            {
+                _turnAnimationStatus = 0;
+                ResetRotation();
+            }
+        }
+
+        _turnAnimationStatus = Mathf.Clamp(_turnAnimationStatus, -1, 1);
+        _carBody.transform.eulerAngles = new Vector3(
+            _carBody.transform.rotation.eulerAngles.x,
+            _originalRotation.eulerAngles.y + _turnAnimationStatus * _turnAnimationMaxDegrees,
+            _carBody.transform.rotation.eulerAngles.z
+        );
+
     }
 
     private void MoveCarBody()
@@ -91,6 +140,11 @@ public class CarController : MonoBehaviour
         {
             _targetPosition = _targetPosition.normalized * (_maxDistanceFromCenter - BodyExtentsLateral);
         }
+    }
+
+    private void ResetRotation()
+    {
+        _carBody.transform.rotation = _originalRotation;
     }
 
     private void OnDrawGizmos()

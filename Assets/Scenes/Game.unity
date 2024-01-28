@@ -409,6 +409,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485102144328142645, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
+      propertyPath: _turnAnimationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485102144328142645, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
       propertyPath: _maxDistanceFromCenter
       value: 10
       objectReference: {fileID: 0}
