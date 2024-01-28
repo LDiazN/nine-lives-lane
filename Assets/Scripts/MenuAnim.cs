@@ -14,7 +14,7 @@ public class MenuAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LeanTween.rotateX(textObject.GetComponent<RectTransform>().gameObject, -180, 2).setEase(LeanTweenType.easeInQuad);
+        LeanTween.moveY(textObject.GetComponent<RectTransform>(), -250, 2).setEase(LeanTweenType.easeInQuad);
         StartCoroutine(AnimateButtons());
     }
 
