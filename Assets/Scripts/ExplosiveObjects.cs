@@ -14,10 +14,10 @@ public class ExplosiveObjects : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (canExplote)
+        if (canExplote && !collision.gameObject.CompareTag("Road"))
         {
-            Instantiate(explosiveObject,transform.position, Quaternion.identity);
-            Debug.Log("EXPLOTAAAAA");
+            Instantiate(explosiveObject, transform.position, Quaternion.identity);
+            GetComponent<BoxCollider>().enabled = false;
             Destroy(gameObject);
         }
     }

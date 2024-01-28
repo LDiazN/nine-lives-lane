@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
 
-    [SerializeField, Range(0,100)]
+    [SerializeField, Range(0, 100)]
     private float _maxDistanceFromCenter = 10;
 
     [SerializeField]
@@ -13,6 +13,7 @@ public class CarController : MonoBehaviour
 
     [SerializeField]
     private GameObject _carBody;
+    public GameObject CarBody { get { return _carBody; } }
 
     [SerializeField]
     private float _maxCarBodySpeed = 10;
@@ -53,9 +54,9 @@ public class CarController : MonoBehaviour
 
     private void MoveCarBody()
     {
-        Vector3 Velocity = _maxCarBodySpeed * (_targetPosition -  _carBody.transform.localPosition);
+        Vector3 Velocity = _maxCarBodySpeed * (_targetPosition - _carBody.transform.localPosition);
 
-        if ( Vector3.Distance(_carBody.transform.localPosition, _targetPosition) >= 0.1)
+        if (Vector3.Distance(_carBody.transform.localPosition, _targetPosition) >= 0.1)
         {
             _carBody.transform.localPosition += Velocity * Time.deltaTime;
         }
@@ -97,7 +98,7 @@ public class CarController : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(
-            transform.position, 
+            transform.position,
             transform.TransformPoint(Vector3.right * _maxDistanceFromCenter)
             );
 
@@ -111,9 +112,9 @@ public class CarController : MonoBehaviour
 
         Gizmos.color = Color.blue;
         // Draw left cube
-        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.right * _maxDistanceFromCenter + Vector3.right), new Vector3(2,2,2));
+        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.right * _maxDistanceFromCenter + Vector3.right), new Vector3(2, 2, 2));
         // Draw Right cube
-        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.left * _maxDistanceFromCenter + Vector3.left), new Vector3(2,2,2));
+        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.left * _maxDistanceFromCenter + Vector3.left), new Vector3(2, 2, 2));
 
         // Draw Target location
         Gizmos.color = Color.yellow;

@@ -11,13 +11,9 @@ public class HurtingPlayer : MonoBehaviour
     {
         if (other.gameObject.name == "Player" && canBeHurt)
         {
-            StartCoroutine(HurtPlayer());
+            canBeHurt = false;
+            Lifemanager.Instance.CurrentLifes -= Damage;
         }
     }
-    IEnumerator HurtPlayer()
-    {
-        canBeHurt = false;
-        Lifemanager.Instance.CurrentLifes -= Damage;
-        yield return new WaitForSeconds(GameManager.Instance.InvulnerabilityTime);
-    }
+
 }

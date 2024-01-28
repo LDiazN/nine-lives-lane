@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [HideInInspector] public GameObject Player;
+    public GameObject Player;
     public float InvulnerabilityTime = 0.5f;
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("CarBody");
     }
 
 }

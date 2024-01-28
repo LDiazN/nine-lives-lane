@@ -17,10 +17,11 @@ public class FlyAway : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             if (rb != null)
             {
+                CarController p = other.gameObject.GetComponent<CarController>();
                 Vector3 directionToImpulse = (transform.position - GameManager.Instance.Player.transform.position).normalized * forceForward;
                 rb.AddForce(directionToImpulse + Vector3.up * forceUp, ForceMode.Impulse);
                 GetComponent<ExplosiveObjects>().canExplote = true;
