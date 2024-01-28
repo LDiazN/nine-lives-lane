@@ -9,12 +9,12 @@ public class MenuAnim : MonoBehaviour
     public Button[] buttons; 
     public float delay = 0.2f;
     public LeanTweenType animationbutton;
-    public GameObject textObject;
+    //public GameObject textObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        LeanTween.moveY(textObject.GetComponent<RectTransform>(), -250, 2).setEase(LeanTweenType.easeInQuad);
+        //LeanTween.moveY(textObject.GetComponent<RectTransform>(), -250, 2).setEase(LeanTweenType.easeInQuad);
         StartCoroutine(AnimateButtons());
     }
 
