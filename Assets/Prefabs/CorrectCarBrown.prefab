@@ -176,7 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1405550265116772382}
   - component: {fileID: 1405550265116772377}
-  - component: {fileID: 1405550265116772376}
   - component: {fileID: 1294978763618404406}
   - component: {fileID: 1405550265116772379}
   - component: {fileID: 1405550265116772378}
@@ -218,19 +217,6 @@ MonoBehaviour:
   spinForce: 400
   timeToDestoy: 5
   speed: 30
---- !u!114 &1405550265116772376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405550265116772391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf0a4f306bd32c429b4a1049ffda7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
 --- !u!114 &1294978763618404406
 MonoBehaviour:
   m_ObjectHideFlags: 0

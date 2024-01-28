@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime;
 
 public class HurtingPlayer : MonoBehaviour
 {
     public int Damage;
-    bool canBeHurt = true;
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && canBeHurt)
+        if (other.gameObject.CompareTag("Player"))
         {
-            canBeHurt = false;
-            Lifemanager.Instance.CurrentLifes -= Damage;
+            Lifemanager.Instance.TryHurt(Damage);
         }
     }
 

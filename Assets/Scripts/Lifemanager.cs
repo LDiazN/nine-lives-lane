@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Lifemanager : MonoBehaviour
 {
-    public float CurrentLifes = 7;
+    public int CurrentLifes = 7;
     public static Lifemanager Instance;
+    private bool _canBeHurt = true;
+
+    private AudioSource audioSource;
+    [SerializeField] float TimeBetweenHits = 2; // secondss
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -17,5 +27,26 @@ public class Lifemanager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void TryHurt(int Damage = 1)
+    {
+        if (!_canBeHurt)
+            return;
+
+        CurrentLifes -= Damage;
+        Debug.Log($"Player Hurt! You have {CurrentLifes}");
+        var carController = GameManager.Instance.Player.GetComponent<CarController>();
+        carController.Boink();
+        StartCoroutine(HurtTimer());
+        audioSource.Play();
+    }
+
+    IEnumerator HurtTimer()
+    {
+        _canBeHurt = false;
+        yield return new WaitForSeconds(TimeBetweenHits);
+        _canBeHurt = true;
+
     }
 }

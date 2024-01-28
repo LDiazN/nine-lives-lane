@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -7441481228776904637}
   - component: {fileID: 4870631339911898090}
   - component: {fileID: 8775271406669038207}
-  - component: {fileID: 523298278009370755}
   - component: {fileID: 7367925287952816084}
   m_Layer: 0
   m_Name: TrashCan
@@ -90,19 +89,6 @@ MonoBehaviour:
   spinForce: 400
   timeToDestoy: 5
   speed: 15
---- !u!114 &523298278009370755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949149472504748366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf0a4f306bd32c429b4a1049ffda7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
 --- !u!114 &7367925287952816084
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        Player = GameObject.Find("CarBody");
+        Player = GameObject.Find("Car");
     }
 
 }
