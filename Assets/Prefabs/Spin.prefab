@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6583925337934748731}
   - component: {fileID: 6583925337934748728}
   - component: {fileID: 6583925337934748729}
-  - component: {fileID: 6583925337934748734}
-  - component: {fileID: 6583925337934748735}
   - component: {fileID: 6583925337934748732}
   - component: {fileID: 6583925337934748733}
   - component: {fileID: -2798993895062447085}
+  - component: {fileID: 6583925337934748734}
+  - component: {fileID: 6583925337934748735}
   m_Layer: 0
   m_Name: Spin
   m_TagString: Untagged
@@ -88,6 +88,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6583925337934748732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583925337934748674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af21d69a3353114f8af1de84989211b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinForce: 400
+  timeToDestoy: 5
+  speed: 30
+--- !u!114 &6583925337934748733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583925337934748674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf0a4f306bd32c429b4a1049ffda7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+--- !u!114 &-2798993895062447085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583925337934748674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbb60a6cc8ec0c458803e3f30907b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosiveObject: {fileID: 6164786939967204193, guid: 474d9c31742423f409659be2fa23a4aa, type: 3}
+  canExplote: 0
 --- !u!65 &6583925337934748734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -117,45 +159,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &6583925337934748732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6583925337934748674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af21d69a3353114f8af1de84989211b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinForce: 400
-  timeToDestoy: 5
-  speed: 1800
---- !u!114 &6583925337934748733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6583925337934748674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf0a4f306bd32c429b4a1049ffda7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
---- !u!114 &-2798993895062447085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6583925337934748674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cbb60a6cc8ec0c458803e3f30907b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosiveObject: {fileID: 6164786939967204193, guid: 474d9c31742423f409659be2fa23a4aa, type: 3}
-  canExplote: 0

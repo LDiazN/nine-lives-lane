@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinForce: 400
   timeToDestoy: 5
-  speed: 1800
+  speed: 15
 --- !u!114 &523298278009370755
 MonoBehaviour:
   m_ObjectHideFlags: 0
