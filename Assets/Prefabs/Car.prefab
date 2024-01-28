@@ -150,7 +150,7 @@ Transform:
   m_Children:
   - {fileID: 1944086493808457262}
   - {fileID: 8943214671401354458}
-  - {fileID: 1127109884542891832}
+  - {fileID: 6968398826257377114}
   m_Father: {fileID: 3485102144328142644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -282,68 +282,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &589678027177185491
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3485102143435191816}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-      propertyPath: m_Name
-      value: carro arepa
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
---- !u!4 &1127109884542891832 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e1bb65cc39f6e774ab176c6ca111cf9b, type: 3}
-  m_PrefabInstance: {fileID: 589678027177185491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2199193047638750835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,6 +352,68 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7104908007753167529, guid: 8b69c832ef5d7854099e2234be8280b6, type: 3}
   m_PrefabInstance: {fileID: 2199193047638750835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7439384401297572017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3485102143435191816}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+      propertyPath: m_Name
+      value: carro arepa
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+--- !u!4 &6968398826257377114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac1d92436328eb54c9e81b8de1448139, type: 3}
+  m_PrefabInstance: {fileID: 7439384401297572017}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8674914115508159623
 PrefabInstance:
