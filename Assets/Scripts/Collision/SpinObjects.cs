@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class SpinObjects : MonoBehaviour
 {
     [SerializeField] float spinForce;
     [SerializeField] float timeToDestoy;
     [SerializeField] float speed;
+    [SerializeField] AudioClip crashSound;
+
     bool canRotate = false;
     Vector3 directionToImpulse;
     Rigidbody rb;
+
+    private AudioSource _audioSource;
     private void Start()
     { 
         rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -38,6 +44,12 @@ public class SpinObjects : MonoBehaviour
             rb.velocity = directionToImpulse * speed;
 
             GetComponent<ExplosiveObjects>().canExplote = true;
+
+            if (crashSound != null)
+            {
+                _audioSource.clip = crashSound;
+                _audioSource.Play();
+            }
         }
     }
 }
