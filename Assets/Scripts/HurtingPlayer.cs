@@ -9,7 +9,7 @@ public class HurtingPlayer : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player" && canBeHurt)
+        if (other.gameObject.CompareTag("Player") && canBeHurt)
         {
             canBeHurt = false;
             Lifemanager.Instance.CurrentLifes -= Damage;

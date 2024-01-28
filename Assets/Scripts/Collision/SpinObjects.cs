@@ -11,7 +11,7 @@ public class SpinObjects : MonoBehaviour
     Vector3 directionToImpulse;
     Rigidbody rb;
     private void Start()
-    {
+    { 
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
@@ -28,6 +28,7 @@ public class SpinObjects : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canRotate = true;
+            rb.constraints = RigidbodyConstraints.None;
             directionToImpulse = (transform.position - GameManager.Instance.Player.transform.position).normalized;
             GetComponent<ExplosiveObjects>().canExplote = true;
         }
