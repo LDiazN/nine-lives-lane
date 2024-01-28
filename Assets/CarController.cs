@@ -32,12 +32,23 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private float _turnAnimationMaxDegrees = 30;
 
+    [SerializeField]
+    private GameObject TireSmokeLeft;
+
+    [SerializeField]
+    private GameObject TireSmokeRight;
+
+    [SerializeField]
+    private float _timeToWaitBetweenTireSmokes = 0.5f;
+
     private Quaternion _originalRotation;
     // Target position is a position in **local space**, it's where the car will try to go at any moment. 
     // It should be clamped between the both sides of the car
     Vector3 _targetPosition = Vector3.zero;
 
     private BoxCollider _carCollider;
+
+    private float _timeSinceLastSmoke = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +63,9 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        PlaySmokeIfNecessary();
+
         UpdateTargetPosition();
 
         MoveCarBody();
@@ -63,6 +77,37 @@ public class CarController : MonoBehaviour
         {
             Boink();
         }
+
+        _timeSinceLastSmoke += Time.deltaTime;
+    }
+
+    bool ShouldPlayTireSmoke()
+    {
+        bool justStartedToMove = Mathf.Abs(_turnAnimationStatus) < 0.1;
+        bool playedAWhileAgo = _timeSinceLastSmoke > _timeToWaitBetweenTireSmokes;
+        bool hasUserInput = ShouldMoveLeft() || ShouldMoveRight();
+
+
+        return justStartedToMove && playedAWhileAgo && hasUserInput;
+    }
+
+    void PlaySmokeIfNecessary()
+    {
+        if (!ShouldPlayTireSmoke())
+            return;
+
+        bool isLeft = !ShouldMoveLeft();
+        PlaySmoke(isLeft);
+    }
+
+    private void PlaySmoke(bool isLeft)
+    {
+
+        GameObject tireSmoke = isLeft ? TireSmokeLeft : TireSmokeRight;
+        ParticleSystem particles = tireSmoke.GetComponent<ParticleSystem>();
+
+        particles.Play();
+        _timeSinceLastSmoke = 0.0f;
     }
 
     private void UpdateTurnAnimation()
