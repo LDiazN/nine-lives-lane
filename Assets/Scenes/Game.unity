@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3485102144328142644, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.22
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485102144328142644, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -406,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3485102144328142645, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
       propertyPath: _maxBoinkHeight
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485102144328142645, guid: f7e5b70aa9a84ce49b8b5caf0a7f91f1, type: 3}
       propertyPath: _maxDistanceFromCenter
