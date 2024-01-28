@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Transform parentRoad;
     [SerializeField] float TimeToSpawn = 2;
     [SerializeField] int InitialRoads = 5;
-   
+
 
     protected virtual void Start()
     {
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        parentRoad.position += new Vector3( 0, 0, -Speed * Time.deltaTime);
+        parentRoad.position += new Vector3(0, 0, -Speed * Time.deltaTime);
 
     }
     IEnumerator repeat()
@@ -54,9 +54,20 @@ public class LevelManager : MonoBehaviour
 
     void AddLevelBlock()
     {
-        int RandomIdx = Random.Range(0, allTheLevelBlock.Count);
+        int RandomIdx = 0;
         Points block;
         Vector3 spawnPosition = Vector3.zero;
+        switch (GameManager.Instance.State)
+        {
+            case GameState.Menu:
+                RandomIdx = 0;
+                break;
+            case GameState.InGame:
+                RandomIdx = Random.Range(0, allTheLevelBlock.Count);
+                break;
+            default:
+                break;
+        }
         if (currentLevelBlocks.Count == 0)
         {
             block = Instantiate(allTheLevelBlock[0]);
