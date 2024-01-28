@@ -18,9 +18,12 @@ public class SpinObjects : MonoBehaviour
     {
         if (canRotate)
         {
-            transform.position += directionToImpulse * Time.deltaTime;
-            transform.localRotation = Quaternion.Euler(0, transform.eulerAngles.y + spinForce * Time.deltaTime, 0);
-            rb.velocity = directionToImpulse * speed ;
+            // transform.position += directionToImpulse * Time.deltaTime;
+            transform.eulerAngles = new Vector3(
+                transform.rotation.eulerAngles.x, 
+                transform.rotation.eulerAngles.y + Time.deltaTime * spinForce, 
+                transform.rotation.eulerAngles.z
+               );
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -29,7 +32,11 @@ public class SpinObjects : MonoBehaviour
         {
             canRotate = true;
             rb.constraints = RigidbodyConstraints.None;
-            directionToImpulse = (transform.position - GameManager.Instance.Player.transform.position).normalized;
+            var player = GameManager.Instance.Player;
+            directionToImpulse = (transform.position - player.transform.position).normalized;
+            directionToImpulse += Vector3.up * 0.5f;
+            rb.velocity = directionToImpulse * speed;
+
             GetComponent<ExplosiveObjects>().canExplote = true;
         }
     }
