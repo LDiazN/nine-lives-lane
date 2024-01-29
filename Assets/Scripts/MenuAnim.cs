@@ -11,12 +11,14 @@ public class MenuAnim : MonoBehaviour
     public LeanTweenType animationbutton;
     public LeanTweenType TitleAnim;
     [SerializeField] RectTransform Title;
-    [SerializeField] HUDPlayer hud;
+    //public GameObject textObject;
 
+    // Start is called before the first frame update
     void Start()
     {
+        //LeanTween.moveY(textObject.GetComponent<RectTransform>(), -250, 2).setEase(LeanTweenType.easeInQuad);
         StartCoroutine(AnimateButtons(-600));
-        LeanTween.moveY(Title, 434, 0.6f).setEaseInBounce();
+        LeanTween.moveY(Title, 434, 0.8f).setEaseInBounce();
     }
     public void quit()
     {
@@ -24,11 +26,11 @@ public class MenuAnim : MonoBehaviour
     }
     public void ChangeToGame()
     {
-        StartCoroutine(hud.StartHeartAnim());
         GameManager.Instance.State = GameState.InGame;
-        LeanTween.moveY(Title, 887, 0.6f).setEaseInBounce();
+        LeanTween.moveY(Title, 887, 0.8f).setEaseInBounce();
         StartCoroutine(AnimateButtons(-1280));
     }
+    //IEnumerato OutButtons()
     IEnumerator AnimateButtons(int i)
     {
         foreach (Button button in buttons)

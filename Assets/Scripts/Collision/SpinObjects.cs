@@ -13,7 +13,7 @@ public class SpinObjects : MonoBehaviour
     bool canRotate = false;
     Vector3 directionToImpulse;
     Rigidbody rb;
-    [SerializeField] int scorePoints;
+
     private AudioSource _audioSource;
     private void Start()
     { 
@@ -36,7 +36,6 @@ public class SpinObjects : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.Score += scorePoints;
             canRotate = true;
             rb.constraints = RigidbodyConstraints.None;
             var player = GameManager.Instance.Player;
