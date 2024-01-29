@@ -11,6 +11,7 @@ public class Lifemanager : MonoBehaviour
 
     private AudioSource audioSource;
     [SerializeField] float TimeBetweenHits = 2; // secondss
+    [SerializeField] HUDPlayer hud;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class Lifemanager : MonoBehaviour
 
         CurrentLifes -= Damage;
         Debug.Log($"Player Hurt! You have {CurrentLifes}");
+        hud.HideHearth();
         var carController = GameManager.Instance.Player.GetComponent<CarController>();
         carController.Boink();
         StartCoroutine(HurtTimer());

@@ -136,6 +136,7 @@ MonoBehaviour:
   timeToDestoy: 5
   speed: 30
   crashSound: {fileID: 8300000, guid: 7f82bff0ff82b72448bd65eadd6dd3e9, type: 3}
+  scorePoints: 15
 --- !u!114 &1294978763618404406
 MonoBehaviour:
   m_ObjectHideFlags: 0

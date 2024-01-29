@@ -29,7 +29,10 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        parentRoad.position += new Vector3(0, 0, -Speed * Time.deltaTime);
+        if (GameManager.Instance.State == GameState.Menu || GameManager.Instance.State == GameState.InGame)
+        {
+            parentRoad.position += new Vector3(0, 0, -Speed * Time.deltaTime);
+        }
 
     }
     IEnumerator repeat()
@@ -49,6 +52,11 @@ public class LevelManager : MonoBehaviour
             Points p = currentLevelBlocks[0];
             currentLevelBlocks.RemoveAt(0);
             Destroy(p.gameObject);
+
+            if (GameManager.Instance.State == GameState.GameOver)
+            {
+                break;
+            }
         }
     }
 
