@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef91902864e33b4b9503c51baa6ff6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLifes: 1
+  CurrentLifes: 7
   TimeBetweenHits: 2
   hud: {fileID: 1247790141}
 --- !u!114 &1239890136
