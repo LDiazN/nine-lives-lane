@@ -63,6 +63,8 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.State == GameState.GameOver)
+            return;
 
         PlaySmokeIfNecessary();
 
