@@ -207,7 +207,7 @@ public class CarController : MonoBehaviour
             );
 
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 1);
+        Gizmos.DrawWireSphere(transform.position, 1);
 
         Gizmos.color = Color.blue;
         // Draw left cube
